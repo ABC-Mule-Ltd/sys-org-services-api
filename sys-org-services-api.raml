@@ -52,7 +52,13 @@ types:
   put:
     is: [Library.ErrorResponse]
     body:
-      application/json: 
+      application/json: UpdateBranchRequest
+    responses:
+      200:
+        body:
+          application/json:
+            type: Library.Response
+            example: !include examples/responses/
   delete:
 
 /departments:
