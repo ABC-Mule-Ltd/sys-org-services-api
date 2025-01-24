@@ -5,7 +5,7 @@
     {
       "branchCode": "KLKTA",
       "branchName": "Kolkata",
-      "address": {
+          "address": {
         "addressLine1": "22nd downing street, Wonderland",
         "addressLine2": "Eco Biz IT Park",
         "zipCode": "700156",
