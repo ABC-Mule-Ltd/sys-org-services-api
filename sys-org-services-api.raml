@@ -40,7 +40,11 @@ types:
           application/json: GetBranchResponse
 
   post:
-    is: [Library.]
+    is: [Library.ErrorResponse]
+    body:
+      application/json: CreateBranchRequest
+    responses:
+      
   put:
   delete:
 
