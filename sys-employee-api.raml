@@ -1,23 +1,19 @@
 #%RAML 1.0
-title: sys-employee-api
+title: sys-org-services-api
 securedBy:
   - Library.clientSecurity
 
 # baseUri: http://localhost:8081/api
 
-description: this is a system api which does a crud operation on snowflake database
+description: This API exposes resources that are essential for organization.
 
 uses:
   Library: library.raml
 
 types:
-  CreateEmployeeRequest : !include dataTypes/requests/createEmployeeRequest.raml
-  UpdateEmployeeRequest:  !include dataTypes/requests/updateEmployeeRequest.raml
   CreateDepartmentRequest: !include dataTypes/requests/createDepartmentRequest.raml
   UpdateDepartmentRequest: !include dataTypes/requests/updateDepartmentRequest.raml
 
-  CreateEmployeeResponse: !include dataTypes/responses/createEmployeeResponse.raml
-  GetEmployeeResponse: !include dataTypes/responses/getEmployeeResponse.raml
   GetDepartmentResponse: !include dataTypes/responses/getDepartmentResponse.raml
   PingResponse: Library.PingResponse
 
