@@ -65,10 +65,12 @@ types:
               example: !include examples/responses/updateBranchResponse.json
     delete:
       is: [Library.ErrorResponse]
-      body:
-        application/json: 
-          type: Library.Response
-          example: !include examples/responses/deleteBranchResponse.json
+      responses:
+        200:
+          body:
+            application/json: 
+              type: Library.Response
+              example: !include examples/responses/deleteBranchResponse.json
 
 /departments:
   get:
