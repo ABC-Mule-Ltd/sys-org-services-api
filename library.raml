@@ -19,7 +19,10 @@ traits:
 
   BranchQueryable:
     queryParamters:
-      branchCode?: string
+      branchCode?: 
+        type: string
+        example: KLTKTA
+        pattern: ^[A-]
       branchName?:
         type: string
         example: Kolkata
@@ -27,8 +30,12 @@ traits:
         type: string
         pattern: ^\d{6}$
         example: 700156
-      country?: string
-      state?: string
+      country?: 
+        type: string
+        example: India
+      state?: 
+        type: string
+        example: West Bengal
 
 types:
   ########################## EXTERNAL DATA TYPES ##########################
