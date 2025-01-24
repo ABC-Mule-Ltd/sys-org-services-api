@@ -1,0 +1,12 @@
+#%RAML 1.0 DataType
+
+uses:
+  Library: ../../library.raml
+
+type: Library.Response
+properties:
+  data:
+    type: array
+    items: Library.Department
+    
+example: !include ../../examples/responses/getDeparmentResponse.json

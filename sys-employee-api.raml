@@ -1,0 +1,129 @@
+#%RAML 1.0
+title: sys-employee-api
+securedBy:
+  - Library.clientSecurity
+
+# baseUri: http://localhost:8081/api
+
+description: this is a system api which does a crud operation on snowflake database
+
+uses:
+  Library: library.raml
+
+types:
+  CreateEmployeeRequest : !include dataTypes/requests/createEmployeeRequest.raml
+  UpdateEmployeeRequest:  !include dataTypes/requests/updateEmployeeRequest.raml
+  CreateDepartmentRequest: !include dataTypes/requests/createDepartmentRequest.raml
+  UpdateDepartmentRequest: !include dataTypes/requests/updateDepartmentRequest.raml
+
+  CreateEmployeeResponse: !include dataTypes/responses/createEmployeeResponse.raml
+  GetEmployeeResponse: !include dataTypes/responses/getEmployeeResponse.raml
+  GetDepartmentResponse: !include dataTypes/responses/getDepartmentResponse.raml
+  PingResponse: Library.PingResponse
+
+
+/ping:
+  get:
+    is: [Library.ErrorResponse]
+    responses:
+      200:
+        body:
+          application/json: PingResponse
+
+/departments:
+  get:
+    is: 
+      - Library.ErrorResponse
+      - Library.Pageable
+
+    responses:
+      200:
+        body:
+          application/json: GetDepartmentResponse
+          
+  post:
+    is: 
+      - Library.ErrorResponse
+
+    body:
+      application/json: CreateDepartmentRequest
+    responses:
+      201:
+        body:
+          application/json: 
+            type: Library.Response
+            example: !include examples/responses/createDepartmentResponse.json
+
+  /{ID}:
+    uriParameters:  
+      ID: Library.DepartmentId
+
+    put:
+      is: 
+        - Library.ErrorResponse
+      body:
+        application/json: UpdateDepartmentRequest
+
+      responses:
+        200:
+          body:
+            application/json: 
+              type: Library.Response
+              example: !include examples/responses/updateDepartmentResponse.json
+
+    delete:
+      is: 
+        - Library.ErrorResponse
+      responses:
+        200:
+          body:
+            application/json:
+              type: Library.Response
+              example: !include examples/responses/deleteDeparmentResponse.json
+
+/employees:
+  post:
+    is: [Library.ErrorResponse]
+
+    body:
+      application/json: CreateEmployeeRequest
+
+    responses:
+      201:
+        body:
+          application/json: CreateEmployeeResponse
+
+  get:
+    is: 
+      - Library.ErrorResponse
+      - Library.Queryable
+      - Library.Pageable
+
+    responses:
+      200:
+        body:
+          application/json: GetEmployeeResponse
+
+  /{ID}:
+    uriParameters:
+      ID: Library.ID
+
+    put:
+      is: [Library.ErrorResponse]
+      body:
+        application/json: UpdateEmployeeRequest
+      responses:
+        200:
+          body:
+            application/json: 
+              type: Library.Response
+              example: !include examples/responses/updateEmployeeResponse.json
+
+    delete:
+      is: [Library.ErrorResponse]
+      responses:
+        200:
+          body:
+            application/json: 
+              type: Library.Response
+              example: !include examples/responses/deleteEmployeeResponse.json

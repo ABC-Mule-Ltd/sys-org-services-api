@@ -1,0 +1,11 @@
+{
+  "status": "success",
+  "message": "Retrieved employee details",
+  "data": [
+    {
+      "deptCode": "ITR",
+      "deptName": "Human Resource",
+      "deptHead": "TR-23988"
+    }
+  ]
+}
