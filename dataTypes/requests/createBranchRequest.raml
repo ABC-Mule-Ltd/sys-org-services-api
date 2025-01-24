@@ -1,1 +1,12 @@
 #%RAML 1.0 DataType
+
+uses:
+  Library: ../../library.raml
+
+type: array 
+items:
+  type: Library.Branch
+minItems: 1
+maxItems: 10
+
+example: !include ../../examples/
