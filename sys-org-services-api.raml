@@ -44,7 +44,10 @@ types:
     body:
       application/json: CreateBranchRequest
     responses:
-      
+      201:
+        body:
+          application/json: Library.Response
+          example: !include examples/responses/createBrachResponse.json
   put:
   delete:
 
