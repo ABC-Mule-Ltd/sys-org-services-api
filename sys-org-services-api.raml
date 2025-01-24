@@ -64,6 +64,10 @@ types:
               type: Library.Response
               example: !include examples/responses/updateBranchResponse.json
     delete:
+      is: [Library.ErrorResponse]
+      body:
+        application/json: 
+          type: Library.Re
 
 /departments:
   get:
