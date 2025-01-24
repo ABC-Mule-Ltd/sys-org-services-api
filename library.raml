@@ -23,7 +23,11 @@ traits:
       branchName?:
         type: string
         example: Kolkata
-      
+      zipCode?: 
+        type: string
+        pattern: ^\d{6}$
+        example: 700156
+      country?: string
 
 types:
   ########################## EXTERNAL DATA TYPES ##########################
