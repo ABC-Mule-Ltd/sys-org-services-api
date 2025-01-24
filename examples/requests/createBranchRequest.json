@@ -3,7 +3,9 @@
     "branchCode": "",
     "branchName": "",
     "address": {
-
+      "addressLine1": "22nd downing street, Wonderland",
+      "addressLine2": "Eco Biz IT Park",
+      "zipCode": ""
     },
     "operatingSince": "1990-02-23"
   }
