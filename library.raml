@@ -6,21 +6,9 @@ securitySchemes:
 traits:
   ########################## EXTERNAL TRAITS ##########################
   ErrorResponse: !include exchange_modules/9b8efe00-883f-40ec-913d-12759bd40702/abc-error-responses/1.0.0/abc-error-responses.raml
+  Pageable: !include exchange_modules/9b8efe00-883f-40ec-913d-12759bd40702/abc-pagination-trait/1.0.0/abc-pagination-trait.raml
 
   ########################## INTERNAL TRAITS ##########################
-  Pageable:
-    queryParameters:
-      page?:
-        type: number
-        displayName: Page Number
-        description:  A specific page to retrieve resources from server
-        example: 10
-      size?:
-        type: number
-        displayName: Page Size
-        description: A number will restrict the server response to max 200 items.
-        maximum: 200
-        example: 100
 
   Queryable:
     queryParameters:
