@@ -30,16 +30,24 @@ types:
 
 /branches:
   get:
-
+    is: 
+      - Library.ErrorResponse
+      - Library.Pageable
+      - Library.DepartmentQueryable
+    responses:
+      200:
+        body:
+          app
   post:
   put:
   delete:
+
 /departments:
   get:
     is: 
       - Library.ErrorResponse
       - Library.Pageable
-      - Library.BranchQueryable
+      - Library.DepartmentQueryable
 
     responses:
       200:
