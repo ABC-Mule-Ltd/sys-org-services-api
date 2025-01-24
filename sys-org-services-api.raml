@@ -49,17 +49,21 @@ types:
           application/json: 
             type: Library.Response
             example: !include examples/responses/createBrachResponse.json
-  put:
-    is: [Library.ErrorResponse]
-    body:
-      application/json: UpdateBranchRequest
-    responses:
-      200:
-        body:
-          application/json:
-            type: Library.Response
-            example: !include examples/responses/updateBranchResponse.json
-  delete:
+  /{ID}:
+    uriParameters:
+      ID: 
+      
+    put:
+      is: [Library.ErrorResponse]
+      body:
+        application/json: UpdateBranchRequest
+      responses:
+        200:
+          body:
+            application/json:
+              type: Library.Response
+              example: !include examples/responses/updateBranchResponse.json
+    delete:
 
 /departments:
   get:
