@@ -12,11 +12,17 @@ traits:
   ########################## INTERNAL TRAITS ##########################
   departmentQueryable:
     queryParameters:
-      departmentId?: DepartmentId
+      department?: DepartmentId
       name?:
         type: string
         example: Human Resource
-    
+
+  branchQueryable:
+    queryParamters:
+      branchCode?: string
+      branchName?:
+        type: string
+        example: Ko
 
 types:
   ########################## EXTERNAL DATA TYPES ##########################
