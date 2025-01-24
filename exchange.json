@@ -1,0 +1,10 @@
+{
+  "main": "sys-org-services-api.raml",
+  "name": "sys-org-services-api",
+  "groupId": "9b8efe00-883f-40ec-913d-12759bd40702",
+  "assetId": "sys-org-services-api",
+  "version": "1.0.0",
+  "classifier": "raml",
+  "tags": [],
+  "descriptorVersion": "1.0.0"
+}
